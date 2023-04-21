@@ -9,8 +9,9 @@ function readTextFile(file, ext, callback, isLocked = false) {
 	}
 	xhr.send();
 }
-function buildPage() {
-	let lst = {}, dts = [];
+function buildMainPage() {
+	let lst = {},
+	dts = [];
 	readTextFile("src/list.json", "json", function (txt, sta) {
 		try {
 			if (sta === 200) {
@@ -28,6 +29,10 @@ function buildPage() {
 			date: new Date(i),
 			class: "inverted red"
 		});
+		let tmp = document.createElement("div");
+		tmp.setAttribute("class", "ui four wide column");
+		tmp.innerHTML = "<div class='ui card'><div class='content'><a class='header' href='?page=" + i + "'>" + i + "</a></div></div>";
+		document.getElementById("doc-list").appendChild(tmp);
 	}
 	$('#inline_calendar').calendar({
 		type: 'date',

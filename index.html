@@ -1,7 +1,11 @@
 <head>
 	<meta charset="UTF-8">
+	<title>
+		2_3_3's blog
+	</title>
 	<link rel="stylesheet" href="src/style.css"/>
 	<script type="text/javascript" src="src/main.js"></script>
+	<script type="text/javascript" src="src/mdstyle.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.9.2/semantic.min.js" integrity="sha512-5cguXwRllb+6bcc2pogwIeQmQPXEzn2ddsqAexIBhh7FO1z5Hkek1J9mrK2+rmZCTU6b6pERxI7acnp1MpAg4Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.9.2/semantic.min.css" integrity="sha512-n//BDM4vMPvyca4bJjZPDh7hlqsQ7hqbP9RH18GF2hTXBY5amBwM2501M0GPiwCU/v9Tor2m13GOTFjk00tkQA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
@@ -34,13 +38,30 @@
 	</div>
 	<div class="ui vertical segment" style="margin: 1em 0 1em">
 	</div>
-	<div class="ui container">
-		<div class="ui calendar" id="inline_calendar">
-		</div>
-		<div id="doc-list">
-		</div>
+	<div class="ui container" id="main">
+		<script>
+			let lnk = escape(window.location.href);
+			if (lnk.indexOf("%3Fpage%3D") == -1) {
+				document.write('\
+					<div class="ui calendar" id="inline_calendar">\
+					</div>\
+					<br/>\
+					<div class="ui grid" id="doc-list">\
+					</div>');
+				buildMainPage();
+			} else {
+				let name = lnk.substr(lnk.indexOf("%3Fpage%3D") + 10);
+				readTextFile("doc/" + name + ".md", "md", function (txt, sta) {
+					try {
+						let tmp = document.createElement("textarea");
+						tmp.innerHTML = txt;
+						document.getElementById("main").appendChild(tmp);
+					} catch (e) {
+						alert(e);
+					}
+				});
+				runmd();
+			}
+		</script>
 	</div>
-	<script>
-		buildPage();
-	</script>
 </body>
