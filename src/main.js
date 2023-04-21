@@ -9,6 +9,10 @@ function readTextFile(file, ext, callback, isLocked = false) {
 	}
 	xhr.send();
 }
+function checkValidDate(s) {
+	let d = new Date(s);
+	return !isNaN(d.getTime());
+}
 function buildMainPage() {
 	let lst = {},
 	dts = [];
@@ -25,13 +29,25 @@ function buildMainPage() {
 		}
 	});
 	for (let i in lst) {
-		dts.push({
-			date: new Date(i),
-			class: "inverted red"
-		});
+		if (checkValidDate(i)) {
+			dts.push({
+				date: new Date(i),
+				class: lst[i].dateColor,
+				message: lst[i].subtitle
+			});
+		}
 		let tmp = document.createElement("div");
 		tmp.setAttribute("class", "ui four wide column");
-		tmp.innerHTML = "<div class='ui card'><div class='content'><a class='header' href='?page=" + i + "'>" + i + "</a></div></div>";
+		tmp.innerHTML =
+			"<div class='ui card'>\
+				<div class='content'>\
+					<a class='header' href='?page=" + i + "'>" + i + "</a>\
+				</div>\
+				<div class='content'>\
+					<div class='summary'>" + lst[i].subtitle + "</div>\
+				</div>\
+				<div class='floating ui teal label'>" + lst[i].category + "</div>\
+			</div>";
 		document.getElementById("doc-list").appendChild(tmp);
 	}
 	$('#inline_calendar').calendar({

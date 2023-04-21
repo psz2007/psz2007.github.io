@@ -46,6 +46,7 @@
 					<div class="ui calendar" id="inline_calendar">\
 					</div>\
 					<br/>\
+					<br/>\
 					<div class="ui grid" id="doc-list">\
 					</div>');
 				buildMainPage();
@@ -54,7 +55,7 @@
 				readTextFile("doc/" + name + ".md", "md", function (txt, sta) {
 					try {
 						let tmp = document.createElement("textarea");
-						tmp.innerHTML = txt;
+						tmp.innerHTML = "# "+ name + "\n---\n" + txt;
 						document.getElementById("main").appendChild(tmp);
 					} catch (e) {
 						alert(e);

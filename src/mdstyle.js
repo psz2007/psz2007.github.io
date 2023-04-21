@@ -40,6 +40,9 @@ function runmd() {
 			"h1, h2, h3, h4, h5, h6, h7 {",
 			"  margin: 1em 0 0.5em 0;",
 			"  line-height: 1.2;", "}",
+			"h1 {",
+			"  text-align: center;",
+			"}",
 			"img {",
 			"  max-width: 100%;",
 			"}",
@@ -185,7 +188,7 @@ function runmd() {
 		window.document.head.appendChild(o);
 		const i = window.document.createElement("meta");
 		i.name = "viewport",
-		i.content = "width=device-width; initial-scale=1.0",
+		i.content = "width=device-width, initial-scale=1.0",
 		window.document.head.appendChild(i),
 		n.innerHTML = r.render(t),
 		a.useMathJax && window.MathJax.typeset(),
