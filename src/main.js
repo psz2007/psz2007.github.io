@@ -15,7 +15,7 @@ function checkValidDate(s) {
 }
 function buildMainPage() {
 	let lst = {},
-	dts = [];
+		dts = [];
 	readTextFile("src/list.json", "json", function (txt, sta) {
 		try {
 			if (sta === 200) {

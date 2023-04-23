@@ -1,12 +1,12 @@
 {
-	"2023-4-1": {
-		"dateColor": "inverted red",
-		"subtitle": "联合省选 Day 1",
-		"category": "游记"
-	},
-	"2023-4-2": {
-		"dateColor": "inverted red",
-		"subtitle": "联合省选 Day 2",
-		"category": "游记"
-	}
+    "2023-4-1": {
+        "dateColor": "inverted red",
+        "subtitle": "联合省选 Day 1",
+        "category": "游记"
+    },
+    "2023-4-2": {
+        "dateColor": "inverted red",
+        "subtitle": "联合省选 Day 2",
+        "category": "游记"
+    }
 }
