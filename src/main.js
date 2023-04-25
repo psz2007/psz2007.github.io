@@ -32,7 +32,7 @@ function buildMainPage() {
 		if (checkValidDate(i)) {
 			dts.push({
 				date: new Date(i),
-				class: lst[i].dateColor,
+				class: lst[i].color,
 				message: lst[i].subtitle
 			});
 		}
@@ -46,7 +46,7 @@ function buildMainPage() {
 				<div class='content'>\
 					<div class='summary'>" + lst[i].subtitle + "</div>\
 				</div>\
-				<div class='floating ui teal label'>" + lst[i].category + "</div>\
+				<div class='floating ui " + lst[i].color + " label'>" + lst[i].category + "</div>\
 			</div>";
 		document.getElementById("doc-list").appendChild(tmp);
 	}

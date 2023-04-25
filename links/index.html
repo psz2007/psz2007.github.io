@@ -28,16 +28,16 @@
     <noscript> You need to enable JavaScript to view the page. </noscript>
     <div class="ui borderless top fixed menu">
         <div class="ui container">
-            <a class="ui item" href="."> 2_3_3's blog </a>
+            <a class="ui item" href=".."> 2_3_3's blog </a>
             <a class="ui item">
                 <i class="list alternate icon"> </i>
                 文章列表
             </a>
-            <a class="ui item" href="./about">
+            <a class="ui item" href="../about">
                 <i class="exclamation circle icon" href=""> </i>
                 关于
             </a>
-            <a class="ui item" href="./links">
+            <a class="ui item" href="../links">
                 <i class="linkify icon"> </i>
                 友链
             </a>
@@ -45,32 +45,8 @@
     </div>
     <div class="ui vertical segment" style="margin: 1em 0 1em"></div>
     <div class="ui container" id="main">
-        <script>
-            let lnk = escape(window.location.href);
-            if (lnk.indexOf("%3Fpage%3D") == -1) {
-                document.write(
-                    '\
-					<div class="ui calendar" id="inline_calendar">\
-					</div>\
-					<br/>\
-					<br/>\
-					<div class="ui grid" id="doc-list">\
-					</div>'
-                );
-                buildMainPage();
-            } else {
-                let name = lnk.substr(lnk.indexOf("%3Fpage%3D") + 10);
-                readTextFile("doc/" + name + ".md", "md", function (txt, sta) {
-                    try {
-                        let tmp = document.createElement("textarea");
-                        tmp.innerHTML = "# " + name + "\n---\n" + txt;
-                        document.getElementById("main").appendChild(tmp);
-                    } catch (e) {
-                        alert(e);
-                    }
-                });
-                runmd();
-            }
-        </script>
+		<div class="ui segment">
+			还没东西捏
+		</div>
     </div>
 </body>

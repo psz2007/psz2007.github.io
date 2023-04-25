@@ -28,16 +28,16 @@
     <noscript> You need to enable JavaScript to view the page. </noscript>
     <div class="ui borderless top fixed menu">
         <div class="ui container">
-            <a class="ui item" href="."> 2_3_3's blog </a>
+            <a class="ui item" href=".."> 2_3_3's blog </a>
             <a class="ui item">
                 <i class="list alternate icon"> </i>
                 文章列表
             </a>
-            <a class="ui item" href="./about">
+            <a class="ui item" href="../about">
                 <i class="exclamation circle icon" href=""> </i>
                 关于
             </a>
-            <a class="ui item" href="./links">
+            <a class="ui item" href="../links">
                 <i class="linkify icon"> </i>
                 友链
             </a>
@@ -45,32 +45,56 @@
     </div>
     <div class="ui vertical segment" style="margin: 1em 0 1em"></div>
     <div class="ui container" id="main">
-        <script>
-            let lnk = escape(window.location.href);
-            if (lnk.indexOf("%3Fpage%3D") == -1) {
-                document.write(
-                    '\
-					<div class="ui calendar" id="inline_calendar">\
-					</div>\
-					<br/>\
-					<br/>\
-					<div class="ui grid" id="doc-list">\
-					</div>'
-                );
-                buildMainPage();
-            } else {
-                let name = lnk.substr(lnk.indexOf("%3Fpage%3D") + 10);
-                readTextFile("doc/" + name + ".md", "md", function (txt, sta) {
-                    try {
-                        let tmp = document.createElement("textarea");
-                        tmp.innerHTML = "# " + name + "\n---\n" + txt;
-                        document.getElementById("main").appendChild(tmp);
-                    } catch (e) {
-                        alert(e);
-                    }
-                });
-                runmd();
-            }
-        </script>
+		<div class="ui segment">
+			这是由 <a href="https://github.com/psz2007/">2_3_3 (a.k.a psz2007)</a> 自己从头搭建的博客。
+			<br/>
+			用的是 <a href="https://semantic-ui.com/">Semantic UI</a>，但是 <a href="https://fomantic-ui.com/">forked</a>。
+			<br/>
+			联系方式：φ(QQ) = 3538735690033571444。
+			<br/>
+			也是个 OIer，OJ 账号：
+			<br/>
+			洛谷：<a href="https://www.luogu.com.cn/user/159686">Loser_King</a>
+			<br/>
+			Codeforces：<a href="https://codeforces.com/profile/2_3_3">2_3_3</a>
+			<br/>
+			AtCoder：<a href="https://atcoder.jp/users/psz2007">psz2007</a>
+			<br/>
+			Loser_King 这个 id 用的很少，主要还是 psz2007 和 2_3_3 两个 id 用的比较多。
+			<br/>
+			大概是看到基本上可以认为是我了（
+			<div class="ui accordion">
+				<div class="title">
+					<i class="dropdown icon"> </i>
+				</div>
+				<div class="content">
+					Codeforces 弃号：
+					<br/>
+					<a href="https://codeforces.com/profile/rhzmydd">rhzmydd</a>
+					<br/>
+					AtCoder 弃号：
+					<br/>
+					<a href="https://atcoder.jp/users/lycmd">lycmd</a>
+					<br/>
+					<a href="https://atcoder.jp/users/hzymd">hzymd</a>
+					<br/>
+					<a href="https://atcoder.jp/users/xrmydd">xrmydd</a>
+					<br/>
+					<a href="https://atcoder.jp/users/fsterthantyphoon">Fsterthantyphoon</a>
+					<br/>
+					<a href="https://atcoder.jp/users/tairitsu">Tairitsu</a>
+					<br/>
+					<a href="https://atcoder.jp/users/metatron">METATRON</a>
+					<br/>
+				</div>
+			</div>
+			<script>
+				$('.accordion').accordion({
+					selector: {
+						trigger: '.title .icon'
+					}
+				});
+			</script>
+		</div>
     </div>
 </body>
