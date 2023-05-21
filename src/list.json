@@ -1,12 +1,17 @@
 {
-    "2023-5-6": {
+    "2023-4-1": {
         "color": "red",
-        "subtitle": "PKUSC2023 Day 1",
+        "subtitle": "联合省选 Day 1",
         "category": "游记"
     },
-    "2023-4-26": {
+    "2023-4-2": {
+        "color": "red",
+        "subtitle": "联合省选 Day 2",
+        "category": "游记"
+    },
+    "2023-4-23": {
         "color": "green",
-        "subtitle": "4.26 杂谈",
+        "subtitle": "4.23 杂谈",
         "category": "杂谈"
     },
     "2023-4-25": {
@@ -14,19 +19,34 @@
         "subtitle": "4.25 杂谈",
         "category": "杂谈"
     },
-    "2023-4-23": {
+    "2023-4-26": {
         "color": "green",
-        "subtitle": "4.23 杂谈",
+        "subtitle": "4.26 杂谈",
         "category": "杂谈"
     },
-    "2023-4-2": {
+    "2023-5-4": {
+        "color": "grey",
+        "subtitle": "开发日志（待补）",
+        "category": "未完成"
+    },
+    "2023-5-6": {
         "color": "red",
-        "subtitle": "联合省选 Day 2",
+        "subtitle": "PKUSC2023 Day 1",
         "category": "游记"
     },
-    "2023-4-1": {
-        "color": "red",
-        "subtitle": "联合省选 Day 1",
-        "category": "游记"
+    "2023-5-7": {
+        "color": "grey",
+        "subtitle": "PKUSC2023 Day 2",
+        "category": "未完成"
+    },
+    "2023-5-20": {
+        "color": "grey",
+        "subtitle": "APIO2023 比赛日",
+        "category": "未完成"
+    },
+    "2023-5-21": {
+        "color": "grey",
+        "subtitle": "小游记（大概会有）",
+        "category": "未完成"
     }
 }
